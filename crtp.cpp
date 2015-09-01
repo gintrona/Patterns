@@ -25,7 +25,6 @@ private:
 class Derived_T_A : public BaseT<Derived_T_A>{
 
 public:
-	//Derived_T_A():BaseT<Derived_T_A>(){}
 	void derived_function(){
 		cout<<"This is derived_function in class A"<<endl;
 	}
@@ -34,7 +33,6 @@ public:
 class Derived_T_B : public BaseT<Derived_T_B>{
 
 public:
-	//Derived_T_B(const int &init):BaseT<Derived_T_B>(init){}
 	void derived_function(){
 		cout<<"This is derived_function in class B"<<endl;
 	}
@@ -44,18 +42,14 @@ class BaseV
 {
 
 public:
-	BaseV(const int &init):foo(init){};
-	virtual void derived_function() = 0;//
+	virtual void derived_function() = 0;
 private:
-int foo;
-
 };
 
 
 class Derived_A_V : public BaseV{
 
 public:
-	Derived_A_V(const int &init):BaseV(init){}
 	void derived_function(){
 		cout<<"This is derived_function in A, virtual call"<<endl;
 	}
@@ -65,7 +59,6 @@ public:
 class Derived_B_V : public BaseV{
 
 public:
-	Derived_B_V(const int &init):BaseV(init){}
 	void derived_function(){
 		cout<<"This is derived_function in class B, virtual call"<<endl;
 	}
